@@ -8,6 +8,8 @@ import "errors"
 //
 // Basically, it's just a copy of encoding/json.RawMessage type,
 // but with more convenient non-pointer encoding.
+//
+// HEADS UP: this will be replaced with json.RawMessage when Go 1.10 is out.
 type RawJSON []byte
 
 // MarshalJSON returns m as the JSON encoding of m.

@@ -2,11 +2,10 @@ package openrtb
 
 // 3.2.16 Object: Content
 //
-// This object describes the content in which the impression will appear, which may be syndicated or nonsyndicated
-// content. This object may be useful when syndicated content contains impressions and does
-// not necessarily match the publisher’s general content. The exchange might or might not have
-// knowledge of the page where the content is running, as a result of the syndication method. For
-// example might be a video impression embedded in an iframe on an unknown web property or device.
+// This object describes the content in which the impression will appear, which may be syndicated or nonsyndicated content.
+// This object may be useful when syndicated content contains impressions and does not necessarily match the publisher’s general content.
+// The exchange might or might not have knowledge of the page where the content is running, as a result of the syndication method.
+// For example might be a video impression embedded in an iframe on an unknown web property or device.
 type Content struct {
 
 	// Attribute:
@@ -120,7 +119,7 @@ type Content struct {
 	//   integer
 	// Description:
 	//   Production quality. Refer to List 5.13
-	ProdQ int8 `json:"prodq,omitempty"`
+	ProdQ *ProductionQuality `json:"prodq,omitempty"`
 
 	// Attribute:
 	//   videoquality
@@ -129,7 +128,7 @@ type Content struct {
 	// Description:
 	//   Note: Deprecated in favor of prodq.
 	//   Video quality. Refer to List 5.13.
-	VideoQuality int8 `json:"videoquality,omitempty"`
+	VideoQuality *ProductionQuality `json:"videoquality,omitempty"`
 
 	// Attribute:
 	//   context
@@ -137,7 +136,7 @@ type Content struct {
 	//   integer
 	// Description:
 	//   Type of content (game, video, text, etc.). Refer to List 5.18.
-	Context int8 `json:"context,omitempty"`
+	Context ContentContext `json:"context,omitempty"`
 
 	// Attribute:
 	//   contentrating
@@ -161,7 +160,7 @@ type Content struct {
 	//   integer
 	// Description:
 	//   Media rating per IQG guidelines. Refer to List 5.19.
-	QAGMediaRating int8 `json:"qagmediarating,omitempty"`
+	QAGMediaRating IQGMediaRating `json:"qagmediarating,omitempty"`
 
 	// Attribute:
 	//   keywords
